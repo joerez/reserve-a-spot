@@ -1,11 +1,15 @@
 // server.js - Theater Reservation API
 
 var express = require('express');
-var router = express.Router();
+const app = express();
 
 // Example stub:
-router.get('/theater/name-of-route', function (req, res) {
-  res.json({'stub': `[${req.originalUrl}] Endpoint works! Replace me in Step 2.`});
+app.get('/', function (req, res) {
+  res.send('hello')
 });
 
-module.exports = router;
+const port = process.env.PORT || 3000
+
+app.listen(port, () => {
+  console.log(`Reserving seats on port ${port}!`);
+})
